@@ -1,3 +1,27 @@
+/** Анимация клика */
+
+.click {
+  width: 3px;
+  height: 3px;
+  background: blue;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 100;
+  animation: click 1s forwards;
+}
+@keyframes click {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(30);
+    opacity: 0;
+  }
+}
+
+/** Код страницы */
+
 * {
   margin: 0;
   padding: 0;
@@ -39,15 +63,28 @@ h1 {
 
 #app {
   background: url("./public/1bg.jpg");
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   object-fit: cover;
   margin: 0 auto;
 }
 
 #clicker {
   width: 100vw;
+  width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
   cursor: url("./public/kiss.png"), auto;
+}
+
+#money {
+  color: white;
+  -webkit-text-stroke: #1a1a1a;
+  -webkit-text-stroke-color: #000000;
+  -webkit-text-stroke-width: 0.5px;
+  text-transform: uppercase;
 }
 
 .clicker__wrapper {
@@ -56,7 +93,14 @@ h1 {
 }
 
 .card {
-  padding: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.card__img {
+  max-width: 75px;
 }
 
 aside {

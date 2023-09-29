@@ -1,38 +1,18 @@
-export function setupCounter(count, countOfMoney, shop, element, bonusSpeed) {
-  
-  const items = [
-      {
-        name: "Сильная ладонь",
-        bonus: 1,
-        id: 1,
-        bought: true,
-        cost: 100,
-      },
-      {
-        name: "2 Сильные ладони",
-        bonus: 3,
-        id: 2,
-        cost: 300,
-        bought: false
-      }
-    ];
+import { bonus } from './mock.js'
+import { v } from './variables.js'
+
+export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
     
-  for ( const item of items ) {
+  for ( const item of bonus ) {
     shop.innerHTML += `
       <div>
       <button>${item.name}</button>
       <h3>Купить за ${item.cost}</h3>
       </div>`
   }
-    
-  console.log(items); 
-  let counter = 0;
-  let money = 0;
-  let bonusOfSecond = 1;
-  
-    
+   
   const getBonusOfSecond = () => {
-    bonusOfSecond++
+    v.bonusOfSecond++
   }
   
   shop.addEventListener('click', (e) => {
@@ -41,11 +21,11 @@ export function setupCounter(count, countOfMoney, shop, element, bonusSpeed) {
      }
   } )
   
-  element.addEventListener('click', () => setCounter())
+  element.addEventListener('click', (e) => setCounter(e))
   
-  const setCounter = () => {
+  const setCounter = (e) => {
     let countOfBonusMoney = 0;
-    for (const item of items) {
+    for (const item of bonus) {
       if (item.bought) {
         if ( countOfBonusMoney === 0 ) {
           countOfBonusMoney = item.bonus
@@ -54,16 +34,14 @@ export function setupCounter(count, countOfMoney, shop, element, bonusSpeed) {
         }
       }
     }
-    counter++;
-    money += ++countOfBonusMoney;
-    count.innerHTML = `${counter}`
-    countOfMoney.innerHTML = `${money}`
+    v.money += ++countOfBonusMoney;
+    countOfMoney.innerHTML = `${v.money}`
   }
   
   const getMoneyForSecond = () => {
     setInterval(() => {
-      money = money + bonusOfSecond;
-      countOfMoney.innerHTML = `${money}`
+      v.money = v.money + v.bonusOfSecond;
+      countOfMoney.innerHTML = `${v.money}`
     }, 1000)
   
   }
