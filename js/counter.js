@@ -1,7 +1,7 @@
-import { bonus } from './mock.js'
-import { v } from './variables.js'
+import { bonus } from '@mock/mock.js'
+import { v } from '@js/variables.js'
 
-export function setupCounter(countOfMoney, shop, element, bonusSpeed, shopItems) {
+export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
     
   for ( const item of bonus ) {
     const div = document.createElement('div')
@@ -12,7 +12,7 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed, shopItems)
     button.addEventListener('click', () => setItem(item) )
 
     div.appendChild(button)
-    shopItems.appendChild(div)
+    shop.appendChild(div)
   }
 
   function setItem(item) {
@@ -21,7 +21,7 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed, shopItems)
   }
    
   const getBonusOfSecond = () => {
-    v.bonusOfSecond = v.bonusOfSecond + 0.2
+    v.bonusOfSecond += 0.2
   }
   
   shop.addEventListener('click', (e) => {
@@ -45,13 +45,13 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed, shopItems)
       }
     }
     v.money += ++countOfBonusMoney;
-    countOfMoney.innerHTML = `${v.money}`
+    countOfMoney.innerHTML = `${v.money.toFixed(1)}`
   }
   
   const getMoneyForSecond = () => {
     setInterval(() => {
       v.money = v.money + v.bonusOfSecond;
-      countOfMoney.innerHTML = `${v.money}`
+      countOfMoney.innerHTML = `${v.money.toFixed(1)}`
     }, 1000)
   
   }
