@@ -30,17 +30,17 @@
   user-select: none;
   overflow: hidden;
   color: #000000;
-  font-weight: 700;
+  font-family: 'Pixelify Sans', cursive;
+  letter-spacing: 2px;
+  font-size: 18px;
 }
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: #000000;
   background-color: #5a5a5a;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -106,6 +106,7 @@ body {
   flex-direction: column;
   row-gap: 16px;
   align-items: flex-start;
+  overflow-y: auto;
 }
 
 @keyframes bounce {
@@ -136,16 +137,12 @@ button {
   text-align: center;
   width: 100%;
   border: none;
-  -webkit-box-shadow: 0px 5px 18px 8px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 5px 18px 8px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 5px 18px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  padding: 24px 32px;
+  border-radius: 10px;
+  padding: 18px 24px;
   font-weight: 500;
   font-family: inherit;
-  background-color: #fff;
+  background-color: #ffffff69;
   cursor: pointer;
-  opacity: .9;
   transition: background-color 0.3s, border 0.3s, color 0.3s;
 }
 button:active {

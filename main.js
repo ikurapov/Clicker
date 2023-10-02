@@ -27,4 +27,4 @@ setupCounter (
   document.querySelector('.bonusOfSecond'),
 )
 
-animationCLick(document.querySelector('#clicker'),)
+animationCLick(document.querySelector('#clicker'))

@@ -1,4 +1,6 @@
 export function animationCLick (element) {
+
+  /** Анимация клика */
   
   document.onmousedown = (e) => {
     document.onclick = () => {
@@ -12,6 +14,6 @@ export function animationCLick (element) {
         circle.remove();
       }, 500);
     };
-}
+  }
 
 }
