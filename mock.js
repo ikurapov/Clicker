@@ -3,7 +3,7 @@ export const bonus = [
     name: "Сильная ладонь",
     bonus: 1,
     id: 1,
-    bought: true,
+    bought: false,
     cost: 100,
   },
   {
@@ -12,5 +12,5 @@ export const bonus = [
     id: 2,
     bought: false,
     cost: 300
-  }
+  },
 ];
