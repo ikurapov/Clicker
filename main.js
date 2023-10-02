@@ -1,4 +1,4 @@
-import './style.css'
+import './assets/style.css'
 import { setupCounter } from './counter.js'
 import { animationCLick } from './animationCLick.js'
 
@@ -9,6 +9,8 @@ document.querySelector('#app').innerHTML = `
       <button class="bonusOfSecond" type="button">
         Увеличить скорость
       </button>
+    </div>
+    <div id="shop-items">
     </div>
     </aside>
     <section id="clicker">
@@ -24,7 +26,8 @@ setupCounter (
   document.querySelector('#money'),
   document.querySelector('#shop'),
   document.querySelector('#clicker'),
-  document.querySelector('.bonusOfSecond')
+  document.querySelector('.bonusOfSecond'),
+  document.querySelector('#shop-items')
 )
 
 animationCLick(document.querySelector('#clicker'),)

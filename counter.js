@@ -1,18 +1,23 @@
 import { bonus } from './mock.js'
 import { v } from './variables.js'
 
-export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
+export function setupCounter(countOfMoney, shop, element, bonusSpeed, shopItems) {
     
   for ( const item of bonus ) {
-    shop.innerHTML += `
-      <div>
-      <button class="bonusOfSecond">
-        ${item.name}
-        <img src="../public/coin.png" style="max-width: 30px;"</img>
-        ${item.cost}
-      </button>
-      </div>`
+    const div = document.createElement('div')
+    const button = document.createElement('button')
+
+    button.textContent = `${item.name} купить за ${item.cost} `
     
+    button.addEventListener('click', () => setItem(item) )
+
+    div.appendChild(button)
+    shopItems.appendChild(div)
+  }
+
+  function setItem(item) {
+    const currentBonus  = bonus.find(b => b.id  === item.id)
+    currentBonus.bought = true
   }
    
   const getBonusOfSecond = () => {
@@ -20,14 +25,15 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
   }
   
   shop.addEventListener('click', (e) => {
+    e.stopPropagation()
      if ( e.target.isEqualNode(bonusSpeed) ) {
-      getBonusOfSecond()
+       getBonusOfSecond()
      }
   } )
   
-  element.addEventListener('click', (e) => setCounter(e))
+  element.addEventListener('click', () => setCounter())
   
-  const setCounter = (e) => {
+  const setCounter = () => {
     let countOfBonusMoney = 0;
     for (const item of bonus) {
       if (item.bought) {
