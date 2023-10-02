@@ -65,6 +65,7 @@ body {
   width: 100vw;
   width: 100vw;
   height: 100vh;
+  cursor: pointer;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -100,6 +101,13 @@ body {
   max-width: 40px;
 }
 
+.shop-items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: flex-start;
+}
+
 @keyframes bounce {
   0% {
     transform: translate(0, 0);
@@ -123,23 +131,25 @@ aside {
 }
 
 button {
-  text-align: c;
+  max-width: 300px;
+  text-wrap: wrap;
+  text-align: center;
   width: 100%;
-  display: flex;
-  border: 2px solid #2e2e2e;
+  border: none;
+  -webkit-box-shadow: 0px 5px 18px 8px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 5px 18px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 18px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 24px 32px;
   font-weight: 500;
-  gap: 10px;
   font-family: inherit;
   background-color: #fff;
   cursor: pointer;
+  opacity: .9;
   transition: background-color 0.3s, border 0.3s, color 0.3s;
-  align-items: center;
 }
 button:active {
   color: white;
-  border: 2px solid rgb(255, 255, 255);
   background-color: #ff8be2;
 }
 

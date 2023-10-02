@@ -1,4 +1,3 @@
-
 export function animationCLick (element) {
   
   document.onmousedown = (e) => {
