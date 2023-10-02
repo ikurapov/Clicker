@@ -9,7 +9,6 @@ document.querySelector('#app').innerHTML = `
       <button class="bonusOfSecond" type="button">
         Увеличить скорость
       </button>
-      <p>Купить за 10 монет</p>
     </div>
     </aside>
     <section id="clicker">

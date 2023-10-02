@@ -6,13 +6,17 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
   for ( const item of bonus ) {
     shop.innerHTML += `
       <div>
-      <button>${item.name}</button>
-      <h3>Купить за ${item.cost}</h3>
+      <button class="bonusOfSecond">
+        ${item.name}
+        <img src="../public/coin.png" style="max-width: 30px;"</img>
+        ${item.cost}
+      </button>
       </div>`
+    
   }
    
   const getBonusOfSecond = () => {
-    v.bonusOfSecond++
+    v.bonusOfSecond = v.bonusOfSecond + 0.2
   }
   
   shop.addEventListener('click', (e) => {
@@ -46,5 +50,4 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
   
   }
   getMoneyForSecond()
-
 }
