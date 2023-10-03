@@ -14,11 +14,12 @@
 }
 @keyframes click {
   0% {
-    transform: translate(-50%, -50%), scale(0);
-    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
-  100% {
-    transform: translate(-50%, -50%), scale(100);
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  60% {
     opacity: 0;
   }
 }
@@ -34,7 +35,7 @@
   font-family: cursive;
   letter-spacing: 2px;
   font-size: 18px;
-  cursor: url("../public/cursor32.png"), pointer;
+  cursor: pointer;
 }
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -56,7 +57,7 @@ body {
 }
 
 #app {
-  background: url("./public/bgboy1.jpg");
+  background: url("./public/1bg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   object-fit: cover;

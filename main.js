@@ -1,4 +1,4 @@
-import './assets/style.css'
+import './assets/style.scss'
 import setupCounter from '@js/counter.js'
 import { animationCLick } from '@compos/animationCLick.js'
 

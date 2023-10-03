@@ -12,7 +12,7 @@ function animationCLick (element) {
 
       setTimeout(() => {
         circle.remove();
-      }, 500);
+      }, 1000);
     };
   }
 
