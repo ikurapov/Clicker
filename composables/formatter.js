@@ -9,9 +9,10 @@ function firstLetter (word) {
     return firstLetter
 
 }
-
+  /** Функция форматирования суммы */
+  
 function formatNum(number) {
-  number = number.toFixed(1)
+  number = number.toFixed(0)
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 

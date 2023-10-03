@@ -1,6 +1,6 @@
 const v = {
   bonusOfSecond: 0,
-  money: 1000
+  money: 0
 }
 
 export { v }

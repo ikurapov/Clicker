@@ -3,21 +3,22 @@
 .click {
   width: 100px;
   height: 100px;
-  background-image: url("./public/4tyu.gif");
+  background-image: url("./public/kiss.png");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
   z-index: 100;
-  animation: click 5s forwards;
+  transform: translate(-50%, -50%);
+  animation: click 2s forwards;
 }
 @keyframes click {
   0% {
-    transform: scale(0.5);
+    transform: translate(-50%, -50%), scale(0);
     opacity: 1;
   }
   100% {
-    transform: scale(5);
+    transform: translate(-50%, -50%), scale(100);
     opacity: 0;
   }
 }
@@ -30,9 +31,10 @@
   user-select: none;
   overflow: hidden;
   color: #000000;
-  font-family: 'Pixelify Sans', cursive;
+  font-family: cursive;
   letter-spacing: 2px;
   font-size: 18px;
+  cursor: url("../public/cursor32.png"), pointer;
 }
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -54,7 +56,7 @@ body {
 }
 
 #app {
-  background: url("./public/1bg.jpg");
+  background: url("./public/bgboy1.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   object-fit: cover;
@@ -65,7 +67,6 @@ body {
   width: 100vw;
   width: 100vw;
   height: 100vh;
-  cursor: pointer;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -122,6 +123,7 @@ body {
 }
 
 aside {
+  align-items: center;
   width: 20%;
   display: flex;
   flex-direction: column;
