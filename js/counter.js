@@ -14,18 +14,22 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
     
     button.addEventListener('click', () => setItem(item) )
 
+    button.classList.add(`${item.slug}`)
+
     div.appendChild(button)
     shop.appendChild(div)
   }
 
   const setItem = (item) => {
-    const currentBonus = bonus.find(b => b.id  === item.id)
+    const currentBonus = bonus.find(b => b.slug  === item.slug)
     if ( v.money >= currentBonus.cost ) {
       v.money -= currentBonus.cost 
       countOfMoney.innerHTML = `${v.money.toFixed(1)}`
       currentBonus.bought++
-      const credit = currentBonus.cost * 0.1
-      currentBonus.cost += credit 
+      currentBonus.cost = addCredit(currentBonus.cost, 0.1)
+
+      shop.querySelector(`.${currentBonus.slug}`).textContent = `${firstLetter(currentBonus.name)} купить за ${currentBonus.cost.toFixed(1)}`
+
       return
     }
     return alert('Не хватает денег для покупки бонуса')
@@ -64,5 +68,13 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
     }, 1000)
   }
   getMoneyForSecond()
+
+
+  /** Функция для добавления кредита */
+
+  const addCredit = (cost, creditSum) => {
+    const credit = cost * creditSum
+    return cost += credit
+  }
 
 }
