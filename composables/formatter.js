@@ -10,4 +10,9 @@ function firstLetter (word) {
 
 }
 
-export { firstLetter }
+function formatNum(number) {
+  number = number.toFixed(1)
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+export { firstLetter, formatNum }
