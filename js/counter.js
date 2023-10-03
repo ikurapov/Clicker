@@ -23,7 +23,7 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
     if ( v.money >= currentBonus.cost ) {
       v.money -= currentBonus.cost 
       countOfMoney.innerHTML = `${v.money.toFixed(1)}`
-      currentBonus.bought = true
+      currentBonus.bought++ 
       return
     }
     return alert('Не хватает денег для покупки бонуса')
@@ -36,15 +36,7 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
   const setCounter = () => {
     let countOfBonusMoney = 0;
     for (const item of bonus) {
-      if (item.bought) {
-        if ( countOfBonusMoney === 0 ) {
-          countOfBonusMoney = item.bonus
-          console.log('if', countOfBonusMoney)
-        } else {
-          console.log('else', countOfBonusMoney)
-          countOfBonusMoney += item.bonus
-        }
-      }
+      countOfBonusMoney += (item.bought * item.bonus)
     }
     v.money += ++countOfBonusMoney;
     countOfMoney.innerHTML = `${v.money.toFixed(1)}`
