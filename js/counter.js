@@ -19,11 +19,13 @@ export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
   }
 
   const setItem = (item) => {
-    const currentBonus  = bonus.find(b => b.id  === item.id)
+    const currentBonus = bonus.find(b => b.id  === item.id)
     if ( v.money >= currentBonus.cost ) {
       v.money -= currentBonus.cost 
       countOfMoney.innerHTML = `${v.money.toFixed(1)}`
-      currentBonus.bought++ 
+      currentBonus.bought++
+      const credit = currentBonus.cost * 0.1
+      currentBonus.cost += credit 
       return
     }
     return alert('Не хватает денег для покупки бонуса')
