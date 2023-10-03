@@ -1,9 +1,9 @@
 import { bonus } from '@mock/mock.js'
 import { v } from '@js/variables.js'
-import { firstLetter } from '@compos/firstLetter.js'
+import { firstLetter } from '@compos/formatter.js'
 
-export function setupCounter(countOfMoney, shop, element, bonusSpeed) {
-  
+export default function setupCounter(countOfMoney, shop, element, bonusSpeed) {
+
   /** Кнопки покупки предметов */
 
   for ( const item of bonus ) {

@@ -1,5 +1,5 @@
 import './assets/style.css'
-import { setupCounter } from '@js/counter.js'
+import setupCounter from '@js/counter.js'
 import { animationCLick } from '@compos/animationCLick.js'
 
 document.querySelector('#app').innerHTML = `

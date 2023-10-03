@@ -1,4 +1,4 @@
-export function animationCLick (element) {
+function animationCLick (element) {
 
   /** Анимация клика */
   
@@ -17,3 +17,5 @@ export function animationCLick (element) {
   }
 
 }
+
+export { animationCLick }
