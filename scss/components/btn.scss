@@ -1,0 +1,19 @@
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  border: none;
+  background: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  appearance: none;
+  z-index: 2;
+
+  &--accent {
+    background-color: var(--accent);
+    color: var(--primary);
+  }
+}

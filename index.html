@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru" class="page">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Clicker</title>
+</head>
+<body class="page__body">
+  <!-- Магазин -->
+  <aside id="shop" class="shop"></aside>
+
+  <!-- Баланс -->
+  <div class="balance">
+    <span id="balance" class="balance__value">0</span>
+    <img src="./assets/images/coin.png" alt="$" class="balance__icon">
+  </div>
+
+  <!-- Уведомления -->
+  <div id="msg" class="notify-container"></div>
+
+  <!-- Прогресс-бар -->
+  <div class="progress">
+    <button id="progress-btn" class="progress__btn btn btn--accent">
+      Новая
+    </button>
+    <div class="progress__price"></div>
+    <div class="progress__thumb">
+      <div class="progress__line"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

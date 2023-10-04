@@ -1,0 +1,35 @@
+@import '@/scss/mixins/drag-off';
+
+.balance {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 20px 0 0;
+  color: var(--primary);
+  font-size: 42px;
+
+  &__icon {
+    @include drag-off;
+    max-width: 40px;
+    margin-left: 10px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: bounce;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0%);
+  }
+  50% {
+    transform: translate(0, 10%);
+  }
+}

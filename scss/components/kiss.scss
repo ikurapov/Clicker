@@ -1,0 +1,26 @@
+@import '@/scss/mixins/drag-off';
+
+.kiss {
+  @include drag-off;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: kiss 2s;
+}
+
+@keyframes kiss {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
