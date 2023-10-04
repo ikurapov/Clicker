@@ -1,3 +1,6 @@
+@use 'components/btn';
+@use 'components/notify';
+
 /** Анимация клика */
 
 .click {
@@ -14,11 +17,12 @@
 }
 @keyframes click {
   0% {
-    transform: translate(-50%, -50%), scale(0);
-    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
-  100% {
-    transform: translate(-50%, -50%), scale(100);
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  60% {
     opacity: 0;
   }
 }
@@ -31,13 +35,11 @@
   user-select: none;
   overflow: hidden;
   color: #000000;
-  font-family: cursive;
   letter-spacing: 2px;
   font-size: 18px;
-  cursor: url("../public/cursor32.png"), pointer;
+  cursor: pointer;
 }
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -53,18 +55,16 @@
 body {
   width: 100%;
   height: 100%;
-}
-
-#app {
-  background: url("./public/bgboy1.jpg");
+  background: url("./public/1bg.jpg");
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   object-fit: cover;
   margin: 0 auto;
+  font-family: 'Comfortaa', cursive;
 }
 
 #clicker {
-  width: 100vw;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -133,7 +133,7 @@ aside {
   font-weight: 700;
 }
 
-button {
+.sidebar-btn {
   max-width: 300px;
   text-wrap: wrap;
   text-align: center;
@@ -146,14 +146,9 @@ button {
   background-color: #ffffff69;
   cursor: pointer;
   transition: background-color 0.3s, border 0.3s, color 0.3s;
-}
-button:active {
-  color: white;
-  background-color: #ff8be2;
-}
 
-.bonusOfSecond {
-  display: flexl;
-  justify-content: center;
-  gap: 10px;
+  &:active {
+    color: white;
+    background-color: #ff8be2;
+  }
 }

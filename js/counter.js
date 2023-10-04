@@ -1,6 +1,7 @@
 import { bonus } from '@mock/mock.js'
 import { v } from '@js/variables.js'
 import { firstLetter,formatNum } from '@compos/formatter.js'
+import notify from '@compos/notify.js'
 
 export default function setupCounter(countOfMoney, shop, element, bonusSpeed) {
 
@@ -14,7 +15,7 @@ export default function setupCounter(countOfMoney, shop, element, bonusSpeed) {
     
     button.addEventListener('click', () => setItem(item) )
 
-    button.classList.add(`${item.slug}`)
+    button.classList.add('sidebar-btn', `${item.slug}`)
 
     div.appendChild(button)
     shop.appendChild(div)
@@ -32,7 +33,7 @@ export default function setupCounter(countOfMoney, shop, element, bonusSpeed) {
 
       return
     }
-    return alert('Не хватает денег для покупки бонуса')
+    return notify('error', 'Не хватает денег для покупки бонуса')
   }
   
   /** Счетчик, за клик получаем 1 монету + бонус */
